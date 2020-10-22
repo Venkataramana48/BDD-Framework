@@ -1,6 +1,7 @@
-/*package stepDefinitions;
+package stepDefinitions;
 
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,9 +13,9 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import junit.framework.Assert;
 
-public class DealStepDefinition {
+public class DealsStepWithMapDefinition {
 	
-	public static WebDriver driver;
+public static WebDriver driver;
 	
 	@Given("^user is already login page$")
 	public void  user_is_already_login_page() {
@@ -37,9 +38,11 @@ public class DealStepDefinition {
 	
 	@Then("^user enters username and password$")
 	public void user_enters_username_and_password(DataTable credentials) {
-		List<List<String>> data = credentials.raw();
-		driver.findElement(By.name("email")).sendKeys(data.get(0).get(0));
-		driver.findElement(By.name("password")).sendKeys(data.get(0).get(1));
+		for(Map<String, String> data :credentials.asMaps(String.class, String.class)) {
+		
+		driver.findElement(By.name("email")).sendKeys(data.get("username"));
+		driver.findElement(By.name("password")).sendKeys(data.get("password"));
+	}
 	}
 	
 	@Then("^user clicks on login button$")
@@ -67,12 +70,15 @@ public class DealStepDefinition {
 	}
 	
 	@Then("^user enters deal details$")
-	public void user_enters_deal_details(DataTable dealdetails){
-		List<List<String>> dealValues = dealdetails.raw();
-	    driver.findElement(By.name("title")).sendKeys(dealValues.get(0).get(0));
-	    driver.findElement(By.name("probability")).sendKeys(dealValues.get(0).get(1));
-	    driver.findElement(By.name("amount")).sendKeys(dealValues.get(0).get(2));
-	    driver.findElement(By.name("commission")).sendKeys(dealValues.get(0).get(3));
+	public void user_enters_deal_details(DataTable dealData) throws InterruptedException{
+		
+		for(Map<String, String> data : dealData.asMaps(String.class, String.class)) {
+		
+	    driver.findElement(By.name("title")).sendKeys(data.get("title"));
+	    driver.findElement(By.name("probability")).sendKeys(data.get("probability"));
+	    driver.findElement(By.name("amount")).sendKeys(data.get("amount"));
+	    driver.findElement(By.name("commission")).sendKeys(data.get("commission"));
+	    
 	    //driver.findElement(By.xpath("//button[contains(text(),'Save')]")).click();
 	  try {
 		Thread.sleep(3000);
@@ -81,7 +87,12 @@ public class DealStepDefinition {
 		e.printStackTrace();
 	}
 	    driver.findElement(By.xpath("//div[@class='item']//descendant::button[2]")).click();
+	    Thread.sleep(5000);
+	    driver.findElement(By.xpath("//span[contains(text(),'Deals')]")).click();
+	    Thread.sleep(3000);
+	    driver.findElement(By.xpath("//button[contains(text(),'New')]")).click();
 	  
+	}
 	}
 	
 	@Then("^close the browser$")
@@ -92,5 +103,6 @@ public class DealStepDefinition {
 	
 	
 
+
+
 }
-*/
