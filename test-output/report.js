@@ -1,231 +1,75 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("D:/Selenium Jars/Selenium Projects/LocalBadabing Project with Selenium/Badabing Project/FreeCrmBDDFramework/src/main/java/Features/taggedhooks.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("D:/Selenium Jars/Selenium Projects/LocalBadabing Project with Selenium/Badabing Project/FreeCrmBDDFramework/src/main/java/com/qa/features/freecrm.feature");
 formatter.feature({
   "line": 1,
-  "name": "Test Tagged Hooks",
+  "name": "Free CRM Application Test",
   "description": "",
-  "id": "test-tagged-hooks",
+  "id": "free-crm-application-test",
   "keyword": "Feature"
 });
-formatter.before({
-  "duration": 865300,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 259500,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 145000,
-  "status": "passed"
-});
 formatter.scenario({
-  "line": 4,
-  "name": "This is First test",
+  "line": 3,
+  "name": "Validate Free CRM Home Page Test",
   "description": "",
-  "id": "test-tagged-hooks;this-is-first-test",
+  "id": "free-crm-application-test;validate-free-crm-home-page-test",
   "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 3,
-      "name": "@First"
-    }
-  ]
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 4,
+  "name": "user opens browser",
+  "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "this is the first step",
-  "keyword": "Given "
+  "name": "user is on login page",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 6,
-  "name": "this is the second step",
-  "keyword": "When "
+  "name": "user logs into app",
+  "keyword": "Then "
 });
 formatter.step({
   "line": 7,
-  "name": "this is the third step",
+  "name": "validate home page title",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 8,
+  "name": "validate logged in username",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_first_step()"
+  "location": "HomePageSteps.user_opens_browser()"
 });
 formatter.result({
-  "duration": 165473800,
+  "duration": 14157872500,
   "status": "passed"
 });
 formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_second_step()"
+  "location": "HomePageSteps.user_is_on_login_page()"
 });
 formatter.result({
-  "duration": 114200,
-  "status": "passed"
+  "duration": 303428801,
+  "error_message": "org.openqa.selenium.NoSuchWindowException: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome\u003d86.0.4240.111)\n  (Driver info: chromedriver\u003d2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform\u003dWindows NT 10.0.19041 x86_64) (WARNING: The server did not provide any stacktrace information)\nCommand duration or timeout: 0 milliseconds\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-IFA1H7N\u0027, ip: \u0027192.168.0.57\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_271\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.43.600210 (68dcf5eebde371..., userDataDir: C:\\Users\\Ramana\\AppData\\Loc...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:52245}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 86.0.4240.111, webStorageEnabled: true}\nSession ID: 06fd1e59e1ea5633ec5322196ecc74f5\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)\r\n\tat java.lang.reflect.Constructor.newInstance(Unknown Source)\r\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\r\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\r\n\tat org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)\r\n\tat org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:281)\r\n\tat com.qa.pages.LoginPage.validateLoginPageTitle(LoginPage.java:41)\r\n\tat com.qa.stepDefinitions.HomePageSteps.user_is_on_login_page(HomePageSteps.java:25)\r\n\tat ✽.Then user is on login page(D:/Selenium Jars/Selenium Projects/LocalBadabing Project with Selenium/Badabing Project/FreeCrmBDDFramework/src/main/java/com/qa/features/freecrm.feature:5)\r\n",
+  "status": "failed"
 });
 formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_third_step()"
+  "location": "HomePageSteps.user_enters_username_and_password()"
 });
 formatter.result({
-  "duration": 99000,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 75800,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 84000,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 67300,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 159100,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 174700,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 304600,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 10,
-  "name": "This is Second test",
-  "description": "",
-  "id": "test-tagged-hooks;this-is-second-test",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 9,
-      "name": "@Second"
-    }
-  ]
-});
-formatter.step({
-  "line": 11,
-  "name": "this is the first step",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 12,
-  "name": "this is the second step",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 13,
-  "name": "this is the third step",
-  "keyword": "Then "
+  "status": "skipped"
 });
 formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_first_step()"
+  "location": "HomePageSteps.validate_home_page_title()"
 });
 formatter.result({
-  "duration": 140400,
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_second_step()"
+  "location": "HomePageSteps.validate_logged_in_username()"
 });
 formatter.result({
-  "duration": 123800,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_third_step()"
-});
-formatter.result({
-  "duration": 357800,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 160700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 115200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 378600,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 257700,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 222700,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 402400,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 16,
-  "name": "This is Third test",
-  "description": "",
-  "id": "test-tagged-hooks;this-is-third-test",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 15,
-      "name": "@Third"
-    }
-  ]
-});
-formatter.step({
-  "line": 17,
-  "name": "this is the first step",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 18,
-  "name": "this is the second step",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 19,
-  "name": "this is the third step",
-  "keyword": "Then "
-});
-formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_first_step()"
-});
-formatter.result({
-  "duration": 355500,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_second_step()"
-});
-formatter.result({
-  "duration": 143600,
-  "status": "passed"
-});
-formatter.match({
-  "location": "TaggedHooksStepDefinition.this_is_the_third_step()"
-});
-formatter.result({
-  "duration": 342200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 348300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 345200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 159800,
-  "status": "passed"
+  "status": "skipped"
 });
 });
